@@ -18,7 +18,7 @@ public class UpdateCommand implements Command {
                              ",DATE=? " +
                              "WHERE ID=?")) {
             for (int i = 0; i < parameters.length; i++) {
-                update.setString(i + 1, parameters[i]);
+                update.setString(i + 1, parameters[i].trim());
             }
             update.executeUpdate();
             try (PreparedStatement update_output =
